@@ -31,7 +31,7 @@ class JoinWaitlist extends Component
         return [
             'name'=>['required','string','max:225'],
             'email'=>['required','email',Rule::unique('users','email')],
-            'captcha' => ['nullable'],
+            'captcha' => ['requiredg'],
             'accountType'=>['required','in:1,2']
         ];
     }
