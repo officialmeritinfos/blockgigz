@@ -32,7 +32,7 @@ class SendWelcomeMail extends Command
         $users = User::whereNot('welcomeSent',1)->get();
         if ($users->count()>0){
             foreach ($users as $user) {
-                if (!empty($user->email_verified_at)){g
+                if (!empty($user->email_verified_at)){
                     Mail::to($user->email)->send(new WelcomeMail($user->name));
 
                     $user->welcomeSent=1;
