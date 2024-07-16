@@ -7,19 +7,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="color-scheme" content="dark light">
-    <title>
-        {{$pageName}} - {{$siteName}}
-    </title>
+    <link rel="icon" type="image/png" href="{{asset($web->favicon)}}">
     <link rel="shortcut icon" href="{{asset($web->favicon)}}" type="image/x-icon">
+    <link rel="canonical" href="{{url('/')}}">
+
+    <!-- Meta Tags for SEO -->
+    <meta name="robots" content="index, follow">
     <meta name="description" content="{{$web->description}}">
     <meta name="keywords" content="{{$web->keywords}}">
+    <meta name="author" content="{{$siteName}}">
     <meta name="url" content="{{route('wait-list.home')}}">
-    <meta name="og:title" content="{{$web->name}}"/>
-    <meta name="og:type" content="company"/>
-    <meta name="og:url" content="/"/>
-    <meta name="og:image" content="{{asset($web->favicon)}}"/>
-    <meta name="og:site_name" content="{{$siteName}}"/>
+
+    <!-- Open Graph / Facebook -->
+    <meta name="og:type" content="website"/>
+    <meta name="og:url" content="{{url('/')}}"/>
+    <meta name="og:title" content="{{$web->name}} | {{$pageName}}"/>
     <meta name="og:description" content="{{$web->description}}"/>
+    <meta name="og:image" content="{{asset($web->favicon)}}"/>
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{url('/')}}">
+    <meta property="twitter:title" content="{{$siteName}} - {{$pageName}}">
+    <meta property="twitter:description" content="{{$web->description}}">
+    <meta property="twitter:image" content="{{asset($web->logo)}}">
+    <!-- Prefetch, preconnect, preload -->
+    <link rel="dns-prefetch" href="{{url('/')}}">
+    <link rel="preconnect" href="{{url('/')}}">
+    <link rel="preload" href="{{asset($web->favicon)}}" as="image">
+    <link rel="preload" href="{{asset($web->favicon)}}" as="image">
+
     <!-- Plugin'stylesheets  -->
     <link rel="stylesheet" type="text/css" href="{{asset('waitlist/fonts/typography/fonts.css')}}">
     <link rel="stylesheet" href="{{asset('waitlist/fonts/fontawesome/css/all.min.css')}}">
@@ -43,6 +59,7 @@
     </style>
     @livewireStyles
     @include('genericCss')
+    <title> {{$siteName}} | {{$pageName}}</title>
 </head>
 
 <body>
