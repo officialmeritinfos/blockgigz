@@ -134,7 +134,7 @@ return [
     |
     */
 
-    'recaptcha_secret' => env('GOOGLE_RECAPTCHA_SECRET'),
-    'recaptcha_key' => env('GOOGLE_RECAPTCHA_KEY'),
+    'recaptcha_secret' => env('CAPTCHA_SECRET_KEY'),
+    'recaptcha_key' => env('CAPTCHA_SITE_KEY'),
 
 ];

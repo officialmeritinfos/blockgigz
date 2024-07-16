@@ -14,7 +14,7 @@ class Home extends Controller
         $web = GeneralSetting::find(1);
 
         return view('waitlist.home')->with([
-            'pageName'      =>'Welcome to '.$web->name,
+            'pageName'      =>'Early Access',
             'siteName'      =>$web->name,
             'web'           =>$web
         ]);

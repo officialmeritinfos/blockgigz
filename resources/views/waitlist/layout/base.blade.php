@@ -11,6 +11,15 @@
         {{$pageName}} - {{$siteName}}
     </title>
     <link rel="shortcut icon" href="{{asset($web->favicon)}}" type="image/x-icon">
+    <meta name="description" content="{{$web->description}}">
+    <meta name="keywords" content="{{$web->keywords}}">
+    <meta name="url" content="{{route('wait-list.home')}}">
+    <meta name="og:title" content="{{$web->name}}"/>
+    <meta name="og:type" content="company"/>
+    <meta name="og:url" content="/"/>
+    <meta name="og:image" content="{{asset($web->favicon)}}"/>
+    <meta name="og:site_name" content="{{$siteName}}"/>
+    <meta name="og:description" content="{{$web->description}}"/>
     <!-- Plugin'stylesheets  -->
     <link rel="stylesheet" type="text/css" href="{{asset('waitlist/fonts/typography/fonts.css')}}">
     <link rel="stylesheet" href="{{asset('waitlist/fonts/fontawesome/css/all.min.css')}}">
@@ -32,6 +41,7 @@
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;display=swap');
         @import url('https://fonts.cdnfonts.com/css/clash-display');
     </style>
+    @livewireStyles
 </head>
 
 <body>
@@ -397,22 +407,34 @@
     <!--~~~~~~~~~~~~~~~~~~~~~~~~
     Home 7 : CTA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <div class="cta-home-7" id="join-waitlist">
+    <livewire:watlist.join-waitlist/>
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Contact Page 3 Main section
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="contact-3_main-section section-padding-120" id="contact-us">
         <div class="container">
-            <div class="cta-content-block">
-                <div class="cta-text-block">
-                    <h2 class=" heading-lg heading-lg--cabin text-white">
-                        Sign up today for a slot in the innovative solution
-                    </h2>
-                </div>
-                <div class="cta-form-wrapper">
-                    <form action="#">
-                        <div class="cta-form__input-block">
-                            <input type="text" placeholder="Enter your email">
-                            <button class="btn-masco btn-primary-l07 rounded-pill"><span>Get Started</span></button>
+            <div class="row justify-content-center gutter-y-default">
+                <div class="col-lg-6 col-md-6" data-aos-duration="1000" data-aos="fade-left" data-aos-delay="">
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <img src="{{asset('waitlist/image/contact-details/feature-icon-1.svg')}}" alt="image alt">
                         </div>
-                        {!! NoCaptcha::display() !!}
-                    </form>
+                        <div class="feature-card__body">
+                            <h3 class="feature-card__title">Chat with us</h3>
+                            <p>We're waiting to help you every Monday-Friday from 9 am to 5 pm EST easily.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6" data-aos-duration="1000" data-aos="fade-left" data-aos-delay="">
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <img src="{{asset('waitlist/image/contact-details/feature-icon-3.svg')}}" alt="image alt">
+                        </div>
+                        <div class="feature-card__body">
+                            <h3 class="feature-card__title">Email Us</h3>
+                            <p>Drop us an email at <span>{{$web->email}}</span> and you'll receive a reply within 24 hours.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -547,5 +569,7 @@
         integrity="sha512-RmCE+nEdKZ45TpbCJgvYvfEDz3XaiGmTTJl6GfyITW3fouks4lNTOkoMXWJ9WA6aQO+3FV8cjA6fvTosOgbCrg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 {!! NoCaptcha::renderJs() !!}
+
+@livewireScripts
 </body>
 </html>

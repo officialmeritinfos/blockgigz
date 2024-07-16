@@ -7,8 +7,10 @@
     "require": {
         "php": "^8.2",
         "anhskohbo/no-captcha": "^3.6",
+        "jantinnerezo/livewire-alert": "^3.0",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
+        "livewire/livewire": "^3.5",
         "stevebauman/location": "^7.3"
     },
     "require-dev": {
