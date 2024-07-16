@@ -3,6 +3,8 @@
 namespace App\Livewire\Watlist;
 
 use App\Models\GeneralSetting;
+use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rule;
@@ -10,6 +12,7 @@ use Illuminate\Validation\ValidationException;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
+use Stevebauman\Location\Facades\Location;
 
 class JoinWaitlist extends Component
 {
@@ -21,13 +24,15 @@ class JoinWaitlist extends Component
     #[Validate]
     public $email;
     public $captcha = null;
+    public $newsletter;
 
     public function rules()
     {
         return [
             'name'=>['required','string','max:225'],
             'email'=>['required','email',Rule::unique('users','email')],
-            'captcha' => ['required'],
+            'captcha' => ['nullable'],
+            'accountType'=>['required','in:1,2']
         ];
     }
     public function updatedCaptcha($token)
@@ -50,12 +55,34 @@ class JoinWaitlist extends Component
     }
 
     //submit
-    public function submit()
+    public function submit(Request $request)
     {
         $this->validate();
 
         try {
+            //we will register the user into the system
+            $ip = $request->ip();
+            $position = Location::get();
 
+            $list = User::create([
+                'name'=>$this->name,'email'=>$this->email,
+                'accountType'=>$this->accountType,
+                'registrationIp'=>$ip,
+                'country'=>$position->countryName,
+                'countryCode'=>$position->countryCode,
+                'newsletter'=>($this->newsletter)?1:2
+            ]);
+            if (!empty($list)){
+
+                $this->alert('success', '', [
+                    'position' => 'top-end',
+                    'timer' => 5000,
+                    'toast' => true,
+                    'text' => 'You have successfully joined the wait-list. Thank you for Joining',
+                    'width' => '400',
+                ]);
+                $this->reset(['accountType','name','captcha','email']);
+            }
         }catch (\Exception $exception){
             Log::info('An error occurred while joining wait-list: '.$exception->getMessage());
             $this->alert('error', '', [

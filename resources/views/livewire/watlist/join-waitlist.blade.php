@@ -46,7 +46,7 @@
                                 <div class="form-box-style__form-input">
                                     <h3 class="form-box-style-title">Your name</h3>
                                     <input class="form-control bg-white" type="text" placeholder="Enter your full name"
-                                            wire:model.live="name">
+                                            wire:model.live="name" id="name">
                                     @error('name') <span class="text-danger">{{ $message }}</span> @enderror
                                 </div>
                                 <div class="form-box-style__form-input">
@@ -70,25 +70,34 @@
                                     </div>
                                     @error('accountType') <span class="text-danger">{{ $message }}</span> @enderror
                                 </div>
-                                <div id="captcha" class="mt-4" wire:ignore></div>
 
-                                @error('captcha')
-                                <p class="mt-3 text-sm text-red-600 text-left">
-                                    {{ $message }}
-                                </p>
-                                @enderror
+                                <div class="form-box-style__form-input mt-2">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="1"
+                                               wire:model.live="newsletter">
+                                        <label class="form-check-label" for="inlineCheckbox1">Receive update about our launch and available jobs.</label>
+                                    </div>
+                                </div>
+
                             </div>
-                        </form>
-                        <div class="form-box-style__form-input-button">
-                            <button type="submit" class="btn-masco rounded-pill w-100">
+                            <div class="form-box-style__form-input-button mt-4">
+                                <button type="submit" class="btn-masco rounded-pill w-100">
                                 <span>
                                     Join Wait-list
                                     <div wire:loading>
                                         <span class="spinner-border spinner-border-sm ms-2" role="status" aria-hidden="true"></span>
                                     </div>
                                 </span>
-                            </button>
-                        </div>
+                                </button>
+                            </div>
+                            <div id="captcha" class="mt-4" wire:ignore></div>
+
+                            @error('captcha')
+                            <p class="mt-3 text-sm text-red-600 text-left">
+                                <span class="text-danger"> {{ $message }}</span>
+                            </p>
+                            @enderror
+                        </form>
                     </div>
                 </div>
             </div>
