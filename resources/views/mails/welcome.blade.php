@@ -150,7 +150,8 @@
                                                 <td align="left" class="es-m-p20b" style="padding:0;Margin:0;width:156px">
                                                     <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                         <tr style="border-collapse:collapse">
-                                                            <td align="center" style="padding:0;Margin:0;font-size:0px"><a target="_blank" href="https://viewstripo.email" style="mso-line-height-rule:exactly;text-decoration:underline;color:#3B2495;font-size:16px"><img src="https://fofiyri.stripocdn.email/content/guids/67d00654-3d8d-4c17-bbf5-cefdf3833dd9/images/ceo.jpeg" alt="" width="156" style="display:block;font-size:16px;border:0;outline:none;text-decoration:none"></a></td>
+                                                            <td align="center" style="padding:0;Margin:0;font-size:0px"><a target="_blank" href="#" style="mso-line-height-rule:exactly;text-decoration:underline;color:#3B2495;font-size:16px">
+                                                                    <img src="{{asset('ceo.jpeg')}}" alt="" width="156" style="display:block;font-size:16px;border:0;outline:none;text-decoration:none"></a></td>
                                                         </tr>
                                                     </table></td>
                                             </tr>
