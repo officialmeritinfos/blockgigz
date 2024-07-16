@@ -4,7 +4,9 @@ namespace App\Livewire\Watlist;
 
 use App\Models\GeneralSetting;
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rule;
@@ -75,14 +77,18 @@ class JoinWaitlist extends Component
             ]);
             if (!empty($list)){
 
-                $this->alert('success', '', [
+                event(new Registered($list));
+
+                Auth::login($list);
+
+                $this->alert('info', '', [
                     'position' => 'top-end',
                     'timer' => 5000,
                     'toast' => true,
-                    'text' => 'You have successfully joined the wait-list.',
+                    'text' => 'You have successfully joined the wait-list - Verify your email to retain your position.',
                     'width' => '400',
                 ]);
-                $this->reset(['accountType','name','captcha','email']);
+                $this->reset(['accountType','name','captcha','email','newsletter']);
             }
         }catch (\Exception $exception){
             Log::info('An error occurred while joining wait-list: '.$exception->getMessage());

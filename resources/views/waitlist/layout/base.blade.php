@@ -42,6 +42,7 @@
         @import url('https://fonts.cdnfonts.com/css/clash-display');
     </style>
     @livewireStyles
+    @include('genericCss')
 </head>
 
 <body>
@@ -122,8 +123,9 @@
     @yield('content')
     <div class="footer footer-padding-default footer--light footer-l02">
         <div class="container">
-            <div class="row row--footer-main">
-                <div class="col-md-8 col-lg-5 col-xl-5 col-xxl-4">
+            <div class="row row--footer-main justify-content-center">
+
+                <div class="col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                     <div class="footer__content-block">
                         <div class="footer__content-text">
                             <div class="footer-brand">
@@ -132,6 +134,9 @@
                             <p>
                                 {{$siteName}} is a forward-thinking platform designed to connect top talent with groundbreaking
                                 opportunities in the rapidly evolving fields of blockchain and artificial intelligence (AI).
+                            </p><br/>
+                            <p>
+                                HeadQuarters: {{$web->address}}
                             </p>
                         </div>
                         <a href="mailto:{{$web->email}}" class="footer-link">{{$web->email}}</a>
@@ -153,70 +158,6 @@
                                 </a>
                             </li>
                         </ul>
-                    </div>
-                </div>
-                <div class=" col-lg-7 col-xl-6 col-xxl-7 offset-xl-1">
-                    <div class="row row--list-block">
-                        <div class="col-auto col-md-4 col-lg-auto col-xl-auto col-xxl-auto">
-                            <h3 class="footer-title">Primary Pages</h3>
-                            <ul class="footer-list">
-                                <li>
-                                    <a href="#">Demos</a>
-                                </li>
-                                <li>
-                                    <a href="#">About Us</a>
-                                </li>
-                                <li>
-                                    <a href="#">Services</a>
-                                </li>
-                                <li>
-                                    <a href="#">Pages</a>
-                                </li>
-                                <li>
-                                    <a href="#">Contact</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-auto col-md-4 col-lg-auto col-xl-auto col-xxl-auto">
-                            <h3 class="footer-title">Utility pages</h3>
-                            <ul class="footer-list">
-                                <li>
-                                    <a href="#">Instructions</a>
-                                </li>
-                                <li>
-                                    <a href="#"> Style guide</a>
-                                </li>
-                                <li>
-                                    <a href="#"> Licenses</a>
-                                </li>
-                                <li>
-                                    <a href="#"> 404 Not found</a>
-                                </li>
-                                <li>
-                                    <a href="#"> Password protected</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-auto col-md-4 col-lg-auto col-xl-auto col-xxl-auto">
-                            <h3 class="footer-title">Resources</h3>
-                            <ul class="footer-list">
-                                <li>
-                                    <a href="#">Support</a>
-                                </li>
-                                <li>
-                                    <a href="#"> Privacy policy</a>
-                                </li>
-                                <li>
-                                    <a href="#"> Terms & Conditions</a>
-                                </li>
-                                <li>
-                                    <a href="#"> Strategic finance</a>
-                                </li>
-                                <li>
-                                    <a href="#"> Video guide</a>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -254,5 +195,6 @@
 @livewireScripts
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <x-livewire-alert::scripts />
+@include('basicInclude')
 </body>
 </html>
