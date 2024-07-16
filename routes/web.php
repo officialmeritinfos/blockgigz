@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Auth\Login;
 use App\Http\Controllers\Waitlist\Home;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -23,7 +24,14 @@ Route::post('/email/verification-notification', function (Request $request) {
     return back()->with('message', 'Verification link sent!');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
+//Admin route
+Route::prefix('sysadmin')->group(function (){
+    //Login page
+    Route::get('login',[Login::class,'landingPage'])->name('login');
+    Route::get('login/{email}/authenticate',[Login::class,'authenticateLogin'])->name('login.authenticate');
 
-Route::get('preview-mail',function (){
-    return new App\Mail\WelcomeMail();
+    Route::middleware(['web','auth'])->group(function (){
+        Route::get('dashboard',[\App\Http\Controllers\Admin\Dashboard\Home::class,'landingPage'])->name('dashboard');
+        Route::get('users',[\App\Http\Controllers\Admin\Dashboard\Users::class,'landingPage'])->name('users');
+    });
 });
