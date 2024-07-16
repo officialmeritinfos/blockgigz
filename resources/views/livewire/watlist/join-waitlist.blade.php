@@ -27,13 +27,7 @@
                                     making it more efficient and accessible for both employers and job seekers."
                                 </p>
                                 <div class="testimonial-widget-4__body">
-                                    <div class="testimonial-widget-4__user-image">
-                                        <img src="{{asset('ceo.jpeg')}}" alt="image alt" style="width: 50px;">
-                                    </div>
-                                    <div class="testimonial-widget-4__user-metadeta">
-                                        <h4 class="testimonial-widget-4__user">Michael Erastus</h4>
-                                        <span class="testimonial-widget-4__user-position">CEO & Founder @ {{$siteName}}</span>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>

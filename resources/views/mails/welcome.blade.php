@@ -117,7 +117,9 @@
                                                 <td valign="top" align="center" style="padding:0;Margin:0;width:560px">
                                                     <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-position:center bottom" role="presentation">
                                                         <tr style="border-collapse:collapse">
-                                                            <td align="center" class="es-m-txt-c" style="padding:0;Margin:0;font-size:0px"><a href="{{url('/')}}" target="_blank" style="mso-line-height-rule:exactly;text-decoration:underline;color:#FFFFFF;font-size:14px"><img src="{{asset($web->logo2)}}" alt=" logo" title=" logo" width="94" style="display:block;font-size:16px;border:0;outline:none;text-decoration:none"></a></td>
+                                                            <td align="center" class="es-m-txt-c" style="padding:0;Margin:0;font-size:0px">
+                                                                <a href="{{url('/')}}" target="_blank"
+                                                                   style="mso-line-height-rule:exactly;text-decoration:underline;color:#FFFFFF;font-size:14px"><img src="{{asset($web->logo2)}}" alt=" logo" title=" logo" width="94" style="display:block;font-size:16px;border:0;outline:none;text-decoration:none"></a></td>
                                                         </tr>
                                                     </table></td>
                                             </tr>
@@ -145,17 +147,7 @@
                                 </tr>
                                 <tr style="border-collapse:collapse">
                                     <td align="left" style="Margin:0;padding-top:20px;padding-right:30px;padding-left:30px;padding-bottom:20px"><!--[if mso]><table style="width:540px" cellpadding="0" cellspacing="0"><tr><td style="width:156px" valign="top"><![endif]-->
-                                        <table cellpadding="0" cellspacing="0" align="left" class="es-left" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
-                                            <tr style="border-collapse:collapse">
-                                                <td align="left" class="es-m-p20b" style="padding:0;Margin:0;width:156px">
-                                                    <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                        <tr style="border-collapse:collapse">
-                                                            <td align="center" style="padding:0;Margin:0;font-size:0px"><a target="_blank" href="#" style="mso-line-height-rule:exactly;text-decoration:underline;color:#3B2495;font-size:16px">
-                                                                    <img src="{{asset('ceo.jpeg')}}" alt="" width="156" style="display:block;font-size:16px;border:0;outline:none;text-decoration:none"></a></td>
-                                                        </tr>
-                                                    </table></td>
-                                            </tr>
-                                        </table><!--[if mso]></td><td style="width:20px"></td><td style="width:364px" valign="top"><![endif]-->
+                                        <!--[if mso]></td><td style="width:20px"></td><td style="width:364px" valign="top"><![endif]-->
                                         <table cellpadding="0" cellspacing="0" align="right" class="es-right" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
                                             <tr style="border-collapse:collapse">
                                                 <td align="left" style="padding:0;Margin:0;width:364px">
