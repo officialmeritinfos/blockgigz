@@ -123,4 +123,18 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | RECAPTCHA KEYS
+    |--------------------------------------------------------------------------
+    |
+    | This URL is used by the console to properly generate URLs when using
+    | the Artisan command line tool. You should set this to the root of
+    | the application so that it's available within Artisan commands.
+    |
+    */
+
+    'recaptcha_secret' => env('GOOGLE_RECAPTCHA_SECRET'),
+    'recaptcha_key' => env('GOOGLE_RECAPTCHA_KEY'),
+
 ];
