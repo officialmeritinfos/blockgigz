@@ -62,7 +62,8 @@ class JoinWaitlist extends Component
         try {
             //we will register the user into the system
             $ip = $request->ip();
-            $position = Location::get();
+            //check the environment
+            $position = (config('app.env')=='local')?Location::get():Location::get($ip);
 
             $list = User::create([
                 'name'=>$this->name,'email'=>$this->email,
