@@ -79,7 +79,7 @@ class JoinWaitlist extends Component
                     'position' => 'top-end',
                     'timer' => 5000,
                     'toast' => true,
-                    'text' => 'You have successfully joined the wait-list. Thank you for Joining',
+                    'text' => 'You have successfully joined the wait-list.',
                     'width' => '400',
                 ]);
                 $this->reset(['accountType','name','captcha','email']);
