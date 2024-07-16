@@ -117,7 +117,7 @@
                                                 <td valign="top" align="center" style="padding:0;Margin:0;width:560px">
                                                     <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-position:center bottom" role="presentation">
                                                         <tr style="border-collapse:collapse">
-                                                            <td align="center" class="es-m-txt-c" style="padding:0;Margin:0;font-size:0px"><a href="{{url('/')}}" target="_blank" style="mso-line-height-rule:exactly;text-decoration:underline;color:#FFFFFF;font-size:14px"><img src="{{$web->logo2}}" alt=" logo" title=" logo" width="94" style="display:block;font-size:16px;border:0;outline:none;text-decoration:none"></a></td>
+                                                            <td align="center" class="es-m-txt-c" style="padding:0;Margin:0;font-size:0px"><a href="{{url('/')}}" target="_blank" style="mso-line-height-rule:exactly;text-decoration:underline;color:#FFFFFF;font-size:14px"><img src="{{asset($web->logo2)}}" alt=" logo" title=" logo" width="94" style="display:block;font-size:16px;border:0;outline:none;text-decoration:none"></a></td>
                                                         </tr>
                                                     </table></td>
                                             </tr>
